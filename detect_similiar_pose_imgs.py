@@ -26,7 +26,7 @@ if __name__ == '__main__':
     parser.add_argument('--ref', required=True, help='reference image path')
     parser.add_argument('--dpath', required=True, help='folder path to find similar head pose images')
     parser.add_argument('--save_path', required=True, default='out', help='save_folder')
-    parser.add_argument('--save_debug', required=False, default=False, help='whether to detect unsimiliar imgs', action='store_true')
+    parser.add_argument('--save_debug', required=False, default=False, help='whether to save unsimiliar pose imgs', action='store_true')
     parser.add_argument('--allow_yaw_flip', required=False, default=False, help='whether to allow yaw flipped imgs', action='store_true')
     parser.add_argument('--device', required=False, default='cuda', help="device select 'cuda' or 'cpu'")
     parser.add_argument('--fa', required=False, default='sfd', help="select face detector 'sfd' or 'blazeface' or 'dlib'")

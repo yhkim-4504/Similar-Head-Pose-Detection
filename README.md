@@ -49,7 +49,7 @@ optional arguments:
   --ref REF             reference image path
   --dpath DPATH         folder path to find similar head pose images
   --save_path SAVE_PATH save_folder
-  --save_debug          whether to detect unsimiliar imgs
+  --save_debug          whether to save unsimiliar imgs
   --allow_yaw_flip      whether to allow yaw flipped imgs
   --device DEVICE       device select 'cuda' or 'cpu'
   --fa FA               select face detector 'sfd' or 'blazeface' or 'dlib'

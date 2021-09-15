@@ -3,16 +3,17 @@
 Detect face images with similar poses to the reference image.
 
 ## Algorithm
-1. Detect 2D Face Landmarks using [face-alignment](https://github.com/1adrianb/face-alignment) library.
+1. Detect 2D Face Landmarks using [face-alignment](https://github.com/1adrianb/face-alignment) detector.
 2. Calculate **relative position of the tip of the nose** named yaw_ratio & pitch_ratio.
 yaw_ratio_range : -50 ~ 50(%), pitch_ratio_range : -50 ~ 50(%), 
 3. Find images below threshold of yaw & pitch ratio.
 
 ## Result
-### Reference image(Threshold : 7)
+Test images were from [BIWI DATASET](https://paperswithcode.com/dataset/biwi).
+### Reference image
 ![ref](./readme_imgs/reference_img.jpg)
 
-### Detected images
+### Detected similar head pose images (Threshold : 7)
 ![f1](./readme_imgs/detected01.jpg)
 ![f2](./readme_imgs/detected02.jpg)
 ![f3](./readme_imgs/detected03.jpg)

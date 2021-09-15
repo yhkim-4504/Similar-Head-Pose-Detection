@@ -31,7 +31,7 @@ if __name__ == '__main__':
     parser.add_argument('--device', required=False, default='cuda', help="device select 'cuda' or 'cpu'")
     parser.add_argument('--fa', required=False, default='sfd', help="select face detector 'sfd' or 'blazeface' or 'dlib'")
     parser.add_argument('--fa_thres', required=False, default=0.93, help="face detect threshold")
-    parser.add_argument('--threshold', required=False, default=7, help='yaw & pitch ratio threshold(%)')
+    parser.add_argument('--threshold', required=False, default=7, help='yaw & pitch ratio threshold, default:7')
     args = parser.parse_args()
 
     os.mkdir(args.save_path)

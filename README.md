@@ -4,7 +4,7 @@ Detect face images with similar poses to the reference image.
 
 ## Algorithm
 1. Detect 2D Face Landmarks using [face-alignment](https://github.com/1adrianb/face-alignment) detector.
-2. Calculate **relative position of the tip of the nose** named yaw_ratio & pitch_ratio.
+2. Calculate **relative position of the tip of the nose** named yaw_ratio & pitch_ratio.<br>
 yaw_ratio_range : -50 ~ 50(%), pitch_ratio_range : -50 ~ 50(%), 
 3. Find images below threshold of yaw & pitch ratio.
 

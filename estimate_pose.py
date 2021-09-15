@@ -12,7 +12,7 @@ def estimate_pose(img_path, fa, draw_landmark=True):
     preds_list = fa.get_landmarks(img)
     if preds_list is None:
         print(img_path, 'is passed on First Face Detection.')
-        return None
+        return None, None
 
     face_imgs = []
     for preds in preds_list:
@@ -45,7 +45,7 @@ def estimate_pose(img_path, fa, draw_landmark=True):
         preds_list = fa.get_landmarks(face_img)
         if preds_list is None:
             print(img_path, 'is passed on Second Face Detection.')
-            return None
+            return None, None
 
         # For preds_list
         for preds in preds_list:

@@ -3,6 +3,7 @@ import numpy as np
 import cv2
 import face_alignment
 import os
+import matplotlib.pyplot as plt
 from utils import img_scaler
 
 def estimate_pose(img_path, fa, draw_landmark=True):
@@ -88,7 +89,7 @@ if __name__ == '__main__':
     parser.add_argument('--device', required=False, default='cuda', help="device select 'cuda' or 'cpu'")
     parser.add_argument('--fa', required=False, default='sfd', help="select face detector 'sfd' or 'blazeface' or 'dlib'")
     parser.add_argument('--fa_thres', required=False, default=0.93, help="face detect threshold")
-    parser.add_argument('--view', required=False, default=False, help='show detected face img', action='store_true')
+    parser.add_argument('--save_name', required=False, default='detected', help='result save name')
     args = parser.parse_args()
 
     print('Loading Detector...', end='')
@@ -101,14 +102,14 @@ if __name__ == '__main__':
     print('Done.')
     
     print('Estimating...', end='')
-    results, _ = estimate_pose(args.path, fa, draw_landmark=args.view)
+    results, _ = estimate_pose(args.path, fa)
     print('Done.')
     if results is None:
         raise Exception('Face not detected!')
     for i, (yaw_ratio, pitch_ratio, face_img) in enumerate(results):
         print(f'[Face {i} - yaw_ratio: {yaw_ratio:.3f}, pitch_ratio: {pitch_ratio:.3f}]')
-        if args.view:
-            cv2.imshow('test_img', face_img[..., ::-1])
-    if args.view:
-        cv2.waitKey(0)
-        cv2.destroyAllWindows()
+        save_name = f'{args.save_name}_face_{i:05}.jpg'
+        plt.figure(figsize=(10,10))
+        plt.title(f'yaw_ratio: {yaw_ratio:.3f}, pitch_ratio: {pitch_ratio:.3f}', fontsize=25)
+        plt.imshow(face_img)
+        plt.savefig(save_name, dpi=60)

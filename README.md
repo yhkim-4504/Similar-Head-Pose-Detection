@@ -35,7 +35,7 @@ optional arguments:
 ```
 **Example:**
 ```bash
-python --path refer_img.png --device cuda --save_name refer_detected
+python estimate_pose.py --path refer_img.png --device cuda --save_name refer_detected
 ```
 
 ### Detect similar head pose images

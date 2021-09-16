@@ -1,4 +1,4 @@
-# Similiar Head Pose Detection
+# Similar Head Pose Detection
 
 Detect face images with similar poses to the reference image.
 

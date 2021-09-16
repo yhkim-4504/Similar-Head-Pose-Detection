@@ -56,7 +56,8 @@ optional arguments:
   --fa_thres FA_THRES   face detect threshold
   --threshold THRESHOLD yaw & pitch ratio threshold, default:7
 ```
-**Example:**
+**Example:**<br>
+Currently, only jpg and png images are supported. You can modify the code to handle other types.
 ```bash
 python detect_similiar_pose_imgs.py --ref refer_img.png --dpath test_imgs --save_path detected --save_debug --device cuda --threshold 7
 ```
